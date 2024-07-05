@@ -1,0 +1,788 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: gainsboro;
+}
+
+a {
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #555;
+    position: relative;
+    border: 2px solid #555;
+}
+
+.container {
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+#first {
+    overflow: hidden;
+    transition: all 0.5s;
+    box-shadow: inset 0 0 0 0 #555;
+}
+
+#first::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 120%;
+    right: 0;
+    top: 0;
+    background-color: rgb(255, 204, 0);
+    z-index: -1;
+    transform-origin: 100% 100%;
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+}
+
+#first:hover {
+    box-shadow: inset 0 0 0 1px black;
+    color: black;
+    border-color: black;
+    /* transform: scale(1.05); */
+}
+
+#first:hover::after {
+    transform: rotate(0deg);
+}
+
+#second {
+    border: 2px solid #321436;
+    color: #321436;
+    transition: color 0.5s;
+    font-weight: 400;
+    transition: all 0.5s;
+}
+
+#second:hover {
+    color: whitesmoke;
+    transform: scale(1.05);
+    font-weight: bolder;
+}
+
+#second:after {
+    content: "";
+    position: absolute;
+    height: 104%;
+    width: 0%;
+    background-color: #321436;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+}
+
+#second:hover::after {
+    width: 102%;
+    top: -1%;
+    left: -1%;
+}
+
+#third {
+    border-color: darkslategray;
+    color: darkslategray;
+    transition: color 0.4s;
+}
+
+#third:hover {
+    color: white;
+    /* font-weight: bolder; */
+}
+
+#third:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 102%;
+    background-color: darkslategray;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: rotateX(90deg);
+    transition: transform 0.5s;
+}
+
+#third:hover:after {
+    transform: rotateX(0deg);
+}
+
+#third:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: darkslategray;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: rotateY(90deg);
+    transition: transform 0.5s;
+}
+
+#third:hover::before {
+    transform: rotateY(0deg);
+}
+
+#fourth {
+    border: 1px solid orangered;
+    color: orangered;
+    font-weight: lighter;
+    transition: all 0.5s;
+}
+
+#fourth:hover {
+    border: 3px solid orangered;
+    font-weight: bolder;
+    letter-spacing: 4px;
+    /* transform: scaleX(1.4); */
+}
+
+#fifth {
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+#fifth:after {
+    content: "Yeah!";
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    background-color: orangered;
+    color: white;
+    width: 105%;
+    height: 140%;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.61, -0.16, 0.35, 1.44);
+}
+
+#fifth:hover::after {
+    transform: translateY(-15%);
+}
+
+#sixth {
+    border: 2px solid white;
+    color: white;
+    background-color: gray;
+    transition: background-color 0.5s;
+    overflow: hidden;
+}
+
+#sixth:hover {
+    background-color: orangered;
+}
+
+#sixth::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    /* z-index: -1; */
+    top: 0;
+    left: 0;
+    transform-origin: 50% 50%;
+    transform: rotateZ(35deg) scale(2, 0.3) translateY(400%);
+    transition: all 0.5s;
+}
+
+#sixth:hover::after {
+    transform: rotateZ(35deg) scale(2, 0.3) translateY(-400%);
+}
+
+#seventh {
+    border: 2px solid black;
+    background-color: gray;
+    color: gray;
+    /* color: rgba(0, 0, 0, 0); */
+    /* transition: all 0.5s; */
+    overflow: hidden;
+}
+
+#seventh::after {
+    content: "Hell yeah!";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: yellow;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-content: center;
+    transform: translate(100%, -100%);
+    transition: transform 0.5s;
+    /* z-index: -1; */
+}
+
+#seventh:hover::after {
+    transform: translate(0, 0);
+}
+
+#seventh::before {
+    content: "Hover me! ";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: yellow;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-content: center;
+    transform: translate(0, 0);
+    transition: transform 0.5s;
+}
+
+#seventh:hover::before {
+    transform: translate(-100%, 100%);
+}
+
+#eighth {
+    overflow: hidden;
+}
+
+#eighth::after {
+    content: "Hover me!";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: darkslategray;
+    color: white;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-content: center;
+    transform: scale(2);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#eighth:hover::after {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#ninth {
+    overflow: hidden;
+    transition: all 0.3s;
+    border: 2px solid orangered;
+    color: orangered;
+}
+
+#ninth:hover {
+    color: white;
+}
+
+#ninth::before {
+    content: "";
+    position: absolute;
+    background: orangered;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0 0 50px 50px;
+    transition: all 0.5s;
+}
+
+#ninth:hover::before {
+    height: 190%;
+}
+
+#tenth {
+    color: white;
+    background: orangered;
+    border: 2px solid white;
+}
+
+#tenth::before,
+#tenth::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-content: center;
+    text-align: center;
+    transform-origin: top center;
+    transform: perspective(700px) rotateX(270deg);
+    transition: transform 0.5s;
+}
+
+#tenth::after {
+    content: "Green";
+    background: darkcyan;
+    perspective: 500px;
+    transform: rotateX(270deg);
+    transition: transform 0.5s 0.2s;
+    z-index: 1;
+}
+
+#tenth:hover::after {
+    transform: rotateX(0deg);
+}
+
+#tenth::before {
+    content: "Yellow";
+    background: darkgoldenrod;
+    perspective: 500px;
+    transform: rotateX(270deg);
+    transition: transform 0.5s;
+}
+
+#tenth:hover::before {
+    transform: rotateX(0deg);
+}
+
+#eleventh {
+    border: 2px solid yellow;
+    color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+#eleventh::after {
+    content: "Yeah!";
+    position: absolute;
+    background: black;
+    color: yellow;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-content: center;
+    text-align: center;
+    transform: translateX(100%) scale(0.5) rotateY(180deg);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#eleventh:hover::after {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    opacity: 1;
+}
+
+#eleventh::before {
+    content: "Hover me!";
+    position: absolute;
+    background: black;
+    color: yellow;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-content: center;
+    text-align: center;
+    transform: translateX(0%) scale(1) rotateY(0deg);
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+#eleventh:hover::before {
+    transform: translateX(-100%) scale(0.5) rotateY(180deg);
+    opacity: 0;
+}
+
+#twelfth {
+    border: 2px solid rgba(0, 0, 0, 0);
+    color: orangered;
+    transition: color 0.3s 0.2s;
+    /* border: 1px solid red; */
+    /* overflow: hidden; */
+}
+
+#twelfth:hover {
+    color: white;
+}
+
+#twelfth::after,
+#twelfth::before {
+    content: "";
+    position: absolute;
+    background: orangered;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    border-radius: 50%;
+    transform-origin: center;
+    transform: translateY(-50%);
+    opacity: 0;
+    z-index: -2;
+    transition: all 0.3s;
+}
+
+#twelfth:hover::before,
+#twelfth:hover::after {
+    opacity: 1;
+}
+
+#twelfth::before {
+    left: 0;
+    box-shadow: -60px 0 0 orangered;
+}
+
+#twelfth::after {
+    right: 0;
+    box-shadow: 60px 0 0 orangered;
+}
+
+#twelfth:hover::before {
+    left: 50%;
+    box-shadow: -20px 0 0 orangered;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+#twelfth:hover::after {
+    right: 50%;
+    box-shadow: 20px 0 0 orangered;
+    transform: translateY(-50%) translateX(50%);
+}
+
+#twelfth span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: orangered;
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s 0.3s;
+    z-index: -1;
+}
+
+#twelfth:hover span {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#thirteenth {
+    border: 2px solid rgba(0, 0, 0, 0);
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+#thirteenth:hover {
+    color: rgb(61, 61, 61);
+    font-weight: bolder;
+    letter-spacing: 1.4px;
+}
+
+#thirteenth::after,
+#thirteenth::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all 0.5s;
+}
+
+#thirteenth::after {
+    top: -2px;
+    left: -2px;
+    background: cyan;
+    transform-origin: top center;
+}
+
+#thirteenth::before {
+    top: 2px;
+    left: 2px;
+    background: crimson;
+    transform-origin: bottom center;
+}
+
+#thirteenth:hover::before {
+    transform: perspective(700px) rotateX(-80deg);
+}
+
+#thirteenth:hover::after {
+    transform: perspective(700px) rotateX(80deg);
+}
+
+#fourteenth {
+    border: 2px solid orange;
+    color: orange;
+    text-transform: uppercase;
+    background: none;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+#fourteenth:hover {
+    color: black;
+    border: 2px solid black;
+}
+
+#fourteenth::before,
+#fourteenth::after,
+#fourteenth span::before,
+#fourteenth span::after {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    top: 0;
+    background: orange;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+#fourteenth::before {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+#fourteenth::after {
+    right: 0;
+    transform: translateX(100%);
+}
+
+#fourteenth:hover::before,
+#fourteenth:hover::after {
+    transform: translateX(0);
+}
+
+#fourteenth span::before {
+    left: 25%;
+    transform: translateY(-100%);
+}
+
+#fourteenth span::after {
+    bottom: 0;
+    left: 50%;
+    transform: translateY(100%);
+}
+
+#fourteenth:hover span::before,
+#fourteenth:hover span::after {
+    transform: translateY(0);
+}
+
+#fifteenth {
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+#fifteenth::before,
+#fifteenth::after {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 3%;
+    z-index: -1;
+    left: -10%;
+    transition: all 0.5s;
+}
+
+#fifteenth::before {
+    background: black;
+    top: 10%;
+}
+
+#fifteenth::after {
+    background: red;
+    bottom: 10%;
+}
+
+#fifteenth:hover::before {
+    top: 87%;
+}
+
+#fifteenth:hover::after {
+    bottom: 87%;
+}
+
+#fifteenth span::before,
+#fifteenth span::after {
+    content: "";
+    position: absolute;
+    width: 2%;
+    height: 120%;
+    z-index: -1;
+    top: -10%;
+    transition: all 0.5s;
+}
+
+#fifteenth span::before {
+    background: black;
+    left: 0;
+}
+
+#fifteenth span::after {
+    background: red;
+    right: 0;
+}
+
+#fifteenth:hover span::before {
+    left: 100%;
+}
+
+#fifteenth:hover span::after {
+    right: 100%;
+}
+
+#sixteenth {
+    background: #c47036;
+    color: white;
+    border: 2px solid gainsboro;
+    text-transform: uppercase;
+}
+
+#sixteenth::before,
+#sixteenth::after {
+    content: "";
+    position: absolute;
+    background: #c47036;
+    width: 30px;
+    height: 30px;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+#sixteenth::before {
+    top: -4px;
+    left: -4px;
+}
+
+#sixteenth::after {
+    bottom: -4px;
+    right: -4px;
+}
+
+#sixteenth:hover::before,
+#sixteenth:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+#seventeenth {
+    transition: all 0.5s;
+    color: black;
+    border: 2px solid black;
+}
+
+#seventeenth:hover {
+    color: white;
+}
+
+#seventeenth::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#seventeenth:hover::after {
+    opacity: 1;
+    transform: rotateZ(20deg);
+}
+
+#seventeenth span {
+    position: relative;
+    color: transparent;
+}
+
+#seventeenth span::before {
+    content: "S";
+    position: absolute;
+    color: black;
+    transition: all 0.5s;
+}
+
+#seventeenth:hover span::before {
+    font-size: 4em;
+    color: gainsboro;
+    transform: translate(-70%, -50%) rotateZ(360deg);
+}
+
+#eighteenth {
+    border: 2px solid transparent;
+    }
+
+#eighteenth::before,
+#eighteenth::after,
+#eighteenth span::before,
+#eighteenth span::after {
+    content: "";
+    position: absolute;
+    transition: all 0.5s;
+}
+
+#eighteenth::before,
+#eighteenth::after {
+    width: 0;
+    height: 2px;
+    background-color: #555;
+    transition: all 0.5s;
+}
+
+#eighteenth::before {
+    top: 0;
+    left: 0;
+}
+
+#eighteenth::after {
+    bottom: 0;
+    right: 0;
+}
+
+#eighteenth:hover::after,
+#eighteenth:hover::before {
+    width: 100%;
+}
+
+#eighteenth span::before,
+#eighteenth span::after {
+    width: 2px;
+    height: 0;
+    background-color: #555;
+}
+
+#eighteenth span::before {
+    top: 0;
+    right: 0;
+}
+
+#eighteenth span::after {
+    bottom: 0;
+    left: 0;
+}
+
+#eighteenth:hover span::before,
+#eighteenth:hover span::after {
+    height: 100%;
+}
+
+#nineteenth {
+    border: 2px solid dodgerblue;
+    color: dodgerblue;
+    transition: all 0.5s;
+}
+
+#nineteenth .wave {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+}

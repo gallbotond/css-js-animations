@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.animated {
+    background-color: orangered;
+    margin: 1em;
+    padding: 1em;
+    width: 100px;
+    border-radius: 1em;
+    color: white;
+
+    transition-property: transform;
+    transition-duration: 3s;
+}
+
+.container {
+    width: 800px;
+    margin: auto;
+}
+
+.anim-btn:hover .animated {
+    background-color: #555;
+    transform: translate(500px, 0);
+}
+
+#ease {
+    transition-timing-function: ease;
+}
+
+#ease-in {
+    transition-timing-function: ease-in;
+}
+
+#ease-out {
+    transition-timing-function: ease-out;
+}
+
+#ease-in-out {
+    transition-timing-function: ease-in-out;
+}
+
+#linear {
+    transition-timing-function: linear;
+}
+
+.anim-btn {
+    background-color: #555;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
