@@ -577,6 +577,13 @@ a {
 
 #fifteenth {
     border: 2px solid rgba(0, 0, 0, 0);
+    color: black;
+    transition: all 0.5s;
+}
+
+#fifteenth:hover {
+    color: red;
+    text-shadow: .5px .5px black;
 }
 
 #fifteenth::before,
@@ -584,7 +591,7 @@ a {
     content: "";
     position: absolute;
     width: 120%;
-    height: 3%;
+    height: 1.5px;
     z-index: -1;
     left: -10%;
     transition: all 0.5s;
@@ -612,7 +619,7 @@ a {
 #fifteenth span::after {
     content: "";
     position: absolute;
-    width: 2%;
+    width: 1.5px;
     height: 120%;
     z-index: -1;
     top: -10%;
