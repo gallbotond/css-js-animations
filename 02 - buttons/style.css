@@ -863,7 +863,7 @@ a {
 }
 
 #twentieth {
-    border-color: gainsboro;
+    border-color: wheat;
     box-shadow: inset 0 0 0 2px black;
     color: black;
     background-color: invisible;
@@ -886,7 +886,7 @@ a {
     position: absolute;
     width: 15%;
     height: 120%;
-    background: gainsboro;
+    background: wheat;
     top: -10%;
     left: 42.5%;
     transform: skewX(60deg);
