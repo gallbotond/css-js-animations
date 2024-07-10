@@ -520,7 +520,6 @@ a {
     border: 2px solid orange;
     color: orange;
     text-transform: uppercase;
-    background: none;
     transition: all 0.5s;
     overflow: hidden;
 }
@@ -575,6 +574,16 @@ a {
     transform: translateY(0);
 }
 
+#fourteenth .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
 #fifteenth {
     border: 2px solid rgba(0, 0, 0, 0);
     color: black;
@@ -583,7 +592,7 @@ a {
 
 #fifteenth:hover {
     color: red;
-    text-shadow: .5px .5px black;
+    text-shadow: 0.5px 0.5px black;
 }
 
 #fifteenth::before,
@@ -726,7 +735,7 @@ a {
 
 #eighteenth {
     border: 2px solid transparent;
-    }
+}
 
 #eighteenth::before,
 #eighteenth::after,
@@ -785,11 +794,345 @@ a {
 #nineteenth {
     border: 2px solid dodgerblue;
     color: dodgerblue;
-    transition: all 0.5s;
+    transition: color 0.7s ease-in;
+    overflow: hidden;
+}
+
+#nineteenth:hover {
+    color: white;
 }
 
 #nineteenth .wave {
-    position: absolute; 
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transition: all 0.7s ease-in;
+}
+
+#nineteenth:hover .wave {
+    transform: translateY(-155%);
+}
+
+#nineteenth .wave::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 105%;
+    background: dodgerblue;
+    bottom: -105%;
+    left: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+#nineteenth path {
+    fill: dodgerblue;
+}
+
+#nineteenth .first-wave,
+#nineteenth .second-wave {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    animation: wavy 0.4s linear infinite;
+}
+
+#nineteenth .second-wave {
+    animation: second-wavy 0.4s linear infinite;
+}
+
+@keyframes wavy {
+    0% {
+        transform: translateX(0) scaleY(-1) translateY(100%);
+    }
+    100% {
+        transform: translateX(100%) scaleY(-1) translateY(100%);
+    }
+}
+
+@keyframes second-wavy {
+    0% {
+        transform: translateX(-100%) scaleY(-1) translateY(100%);
+    }
+    100% {
+        transform: translateX(0) scaleY(-1) translateY(100%);
+    }
+}
+
+#twentieth {
+    border-color: gainsboro;
+    box-shadow: inset 0 0 0 2px black;
+    color: black;
+    background-color: invisible;
+    text-transform: uppercase;
+    transition: all 0.3s 0.2s;
+    overflow: hidden;
+}
+
+#twentieth:hover {
+    color: white;
+}
+
+#twentieth span {
+    position: relative;
+    z-index: 1;
+}
+
+#twentieth::before {
+    content: "";
+    position: absolute;
+    width: 15%;
+    height: 120%;
+    background: gainsboro;
+    top: -10%;
+    left: 42.5%;
+    transform: skewX(60deg);
+    transition: all 0.3s 0.2s, transform 0.3s;
+}
+
+#twentieth:hover::before {
+    background: black;
+    width: 140%;
+    left: -20%;
+    transform: skewX(-50deg);
+}
+
+#twenty-first {
+    border: none;
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+#twenty-first span {
+    color: transparent;
+    position: relative;
+}
+
+#twenty-first span::before {
+    content: "Twenty First";
+    white-space: pre;
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    top: center;
+    left: center;
+    transition: all 0.2s;
+}
+
+#twenty-first:hover span::before {
+    transform: scale(1.1);
+}
+
+#twenty-first::before,
+#twenty-first::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: gray;
+    top: 0;
+    z-index: -1;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.78, -0.62, 0.41, 1.61);
+}
+
+#twenty-first::before {
+    background-color: mediumvioletred;
+    left: -2.5px;
+    top: -5px;
+}
+
+#twenty-first::after {
+    background-color: navy;
+    right: -2.5px;
+    top: 5px;
+}
+
+#twenty-first:hover::before {
+    left: 50%;
+    top: 0;
+    transform: skewX(0deg);
+}
+
+#twenty-first:hover::after {
+    right: 50%;
+    top: 0;
+    transform: skewX(0deg);
+}
+
+#twenty-second {
+    border-radius: 9999px;
+    color: white;
+    background-color: olivedrab;
+    border: none;
+    box-shadow: 0 0 5px gray;
+    transition: all 0.3s;
+}
+
+#twenty-second:hover {
+    box-shadow: 0 5px 10px gray;
+    transform: translateY(-5px);
+}
+
+#twenty-second:active {
+    transform: translateY(-2px);
+    box-shadow: 0 0 3px gray;
+}
+
+#twenty-second::before {
+    content: "";
+    position: absolute;
+    background-color: olivedrab;
+    border-radius: 9999px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+#twenty-second:hover::before {
+    transform: scale(1.5);
+    opacity: 0;
+    z-index: -1;
+}
+
+#twenty-third {
+    border: 2px solid slateblue;
+    background-color: transparent;
+    font-weight: bolder;
+    color: slateblue;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+#twenty-third:hover {
+    color: white;
+}
+
+#twenty-third span {
+    position: absolute;
+    background-color: slateblue;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+#twenty-third::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) scale(400%);
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+#twenty-third:hover::before {
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+}
+
+#twenty-fourth {
+    border: 2px solid deepskyblue;
+    color: deepskyblue;
+    background-color: transparent;
+    transition: all 0.5s;
+    margin: 2em 0;
+    transition: all 0.25s 0.25s;
+}
+
+#twenty-fourth:hover {
+    border-color: transparent;
+    color: white;
+}
+
+#twenty-fourth .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: deepskyblue;
+    box-shadow: 0 0 10px 2px deepskyblue, 0 0 30px deepskyblue,
+    0 0 60px deepskyblue;
+    transform: scale(0);
+    transition: all 0.25s 0.25s;
+}
+
+#twenty-fourth:hover .bg {
+    transform: scale(1);
+}
+
+#twenty-fourth::before,
+#twenty-fourth::after,
+#twenty-fourth span::before,
+#twenty-fourth span::after {
+    content: "";
+    position: absolute;
+    background-color: deepskyblue;
+    box-shadow: 0 0 10px 2px deepskyblue, 0 0 20px deepskyblue,
+        0 0 30px deepskyblue, 0 0 50px deepskyblue, 0 0 100px deepskyblue;
+    z-index: -1;
+    transition: all 0.25s;
+}
+
+#twenty-fourth:hover span::before {
+    transform: translateY(150%) scale(0);
+}
+
+#twenty-fourth:hover span::after {
+    transform: translateY(-150%) scale(0);
+}
+
+#twenty-fourth:hover::before {
+    transform: translateX(350%) scale(0);
+}
+
+#twenty-fourth:hover::after {
+    transform: translateX(-350%) scale(0);
+}
+
+#twenty-fourth::before,
+#twenty-fourth::after {
+    width: 30px;
+    height: 2px;
+    top: 50%;
+}
+
+#twenty-fourth::before {
+    left: -25%;
+}
+
+#twenty-fourth::after {
+    right: -25%;
+}
+
+#twenty-fourth span::before,
+#twenty-fourth span::after {
+    width: 2px;
+    height: 30px;
+    left: 50%;
+}
+
+#twenty-fourth span::before {
+    top: -75%;
+}
+
+#twenty-fourth span::after {
+    bottom: -75%;
 }
