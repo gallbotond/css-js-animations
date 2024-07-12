@@ -2,11 +2,16 @@
     box-sizing: border-box;
 }
 
+/* define a background color variable */
+:root {
+    --bg-color: rgb(38, 52, 58);
+}
+
 body {
     font-family: "roboto", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: wheat;
+    background-color: var(--bg-color);
 }
 
 a {
@@ -22,10 +27,10 @@ a {
 .container {
     margin: 2em;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 4em;
 }
 
 #first {
@@ -137,17 +142,32 @@ a {
 }
 
 #fourth {
-    border: 1px solid orangered;
-    color: orangered;
+    border: 1px solid transparent;
+    color: transparent;
     font-weight: lighter;
-    transition: all 0.5s;
 }
 
-#fourth:hover {
+#fourth:before {
+    content: "Fourth";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: orangered;
+    border: 1px solid orangered;
+    text-align: center;
+    align-content: center;
+    transition: all 0.5s;
+    /* transform: scaleX(1.4); */
+}
+
+#fourth:hover::before {
     border: 3px solid orangered;
     font-weight: bolder;
     letter-spacing: 4px;
-    /* transform: scaleX(1.4); */
+    top: -1.5px;
+    left: -1.5px;
 }
 
 #fifth {
@@ -206,8 +226,8 @@ a {
 
 #seventh {
     border: 2px solid black;
-    background-color: gray;
-    color: gray;
+    background-color: yellow;
+    color: transparent;
     /* color: rgba(0, 0, 0, 0); */
     /* transition: all 0.5s; */
     overflow: hidden;
@@ -219,6 +239,7 @@ a {
     height: 100%;
     width: 100%;
     background-color: yellow;
+    color: black;
     top: 0;
     left: 0;
     text-align: center;
@@ -238,6 +259,7 @@ a {
     height: 100%;
     width: 100%;
     background-color: yellow;
+    color: black;
     top: 0;
     left: 0;
     text-align: center;
@@ -656,7 +678,7 @@ a {
 #sixteenth {
     background: #c47036;
     color: white;
-    border: 2px solid gainsboro;
+    border: 2px solid var(--bg-color);
     text-transform: uppercase;
 }
 
@@ -694,7 +716,7 @@ a {
 }
 
 #seventeenth:hover {
-    color: white;
+    color: var(--bg-color);
 }
 
 #seventeenth::after {
@@ -729,7 +751,7 @@ a {
 
 #seventeenth:hover span::before {
     font-size: 4em;
-    color: gainsboro;
+    color: var(--bg-color);
     transform: translate(-70%, -50%) rotateZ(360deg);
 }
 
@@ -863,7 +885,7 @@ a {
 }
 
 #twentieth {
-    border-color: wheat;
+    border-color: var(--bg-color);
     box-shadow: inset 0 0 0 2px black;
     color: black;
     background-color: invisible;
@@ -886,7 +908,7 @@ a {
     position: absolute;
     width: 15%;
     height: 120%;
-    background: wheat;
+    background: var(--bg-color);
     top: -10%;
     left: 42.5%;
     transform: skewX(60deg);
@@ -1069,7 +1091,7 @@ a {
     z-index: -1;
     background-color: deepskyblue;
     box-shadow: 0 0 10px 2px deepskyblue, 0 0 30px deepskyblue,
-    0 0 60px deepskyblue;
+        0 0 60px deepskyblue;
     transform: scale(0);
     transition: all 0.25s 0.25s;
 }
@@ -1135,4 +1157,27 @@ a {
 
 #twenty-fourth span::after {
     bottom: -75%;
+}
+
+#twenty-fifth {
+    border-radius: 9999px;
+    border-color: transparent;
+    background-color: rgba(240, 248, 255, 0.5);
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 1.3px;
+    backdrop-filter: blur(10px);
+}
+
+#twenty-fifth::before {
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 130%;
+    background-color: deeppink;
+    top: -15%;
+    left: 35%;
+    z-index: -1;
+    border-radius: 5px;
+    transition: all 0.5s;
 }
