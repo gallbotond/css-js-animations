@@ -4,7 +4,7 @@
 
 /* define a background color variable */
 :root {
-    --bg-color: rgb(38, 52, 58);
+    --bg-color: rgb(215, 228, 235);
 }
 
 body {
@@ -1160,24 +1160,85 @@ a {
 }
 
 #twenty-fifth {
+    border: transparent;
+    color: transparent;
+}
+
+#twenty-fifth::before,
+#twenty-fifth::after {
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    left: 40%;
+    background-color: deeppink;
+    box-shadow: 0 0 5px deeppink, 0 0 15px deeppink;
+    z-index: -1;
+    border-radius: 5px;
+    transition: all 0.5s 0.3s;
+}
+
+#twenty-fifth::before {
+    top: -5px;
+}
+
+#twenty-fifth::after {
+    bottom: -5px;
+}
+
+#twenty-fifth:hover::before,
+#twenty-fifth:hover::after {
+    width: 80%;
+    height: 50%;
+    left: 10%;
+}
+
+#twenty-fifth:hover::before {
+    top: 0;
+}
+
+#twenty-fifth:hover::after {
+    bottom: 0;
+}
+
+#twenty-fifth span {
+    white-space: nowrap;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-content: center;
     border-radius: 9999px;
     border-color: transparent;
-    background-color: rgba(240, 248, 255, 0.5);
+    background-color: rgba(228, 242, 255, 0.5);
+    box-shadow: 0 0 5px rgba(128, 128, 128 0.5);
     color: white;
     font-weight: bolder;
     letter-spacing: 1.3px;
     backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
-#twenty-fifth::before {
+#twenty-fifth span::before {
     content: "";
     position: absolute;
-    width: 30%;
-    height: 130%;
-    background-color: deeppink;
-    top: -15%;
-    left: 35%;
-    z-index: -1;
-    border-radius: 5px;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.45),
+        transparent
+    );
+    z-index: 1;
+    transform: skewX(35deg);
     transition: all 0.5s;
+}
+
+#twenty-fifth:hover span::before {
+    transform: skewX(35deg) translateX(200%);
 }
