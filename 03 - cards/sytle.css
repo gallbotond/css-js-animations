@@ -90,7 +90,6 @@ img {
     transform: translateY(100%);
 }
 
-
 .fourth .content {
     background-color: black;
     color: white;
@@ -98,7 +97,7 @@ img {
     top: auto;
     bottom: 0;
     transform: translateY(100%);
-    transition: cubic-bezier(.07,.1,.57,.9) .5s;
+    transition: cubic-bezier(0.07, 0.1, 0.57, 0.9) 0.5s;
 }
 
 .fourth:hover .content {
@@ -107,4 +106,295 @@ img {
 
 .fourth:hover img {
     transform: translateY(-20%);
+}
+
+.fifth {
+    color: white;
+}
+
+.fifth::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 187, 178, 0.5);
+    transform: translateY(100%);
+    transition: all 0.3s;
+}
+
+.fifth .content * {
+    margin: 0.5em;
+    font-weight: bolder;
+}
+
+.fifth .content {
+    transition: all 0.3s 0.3s;
+    opacity: 0;
+    transform: translateY(-10%);
+}
+
+.fifth p {
+    background-color: darkgoldenrod;
+    padding: 0.15em;
+}
+
+.fifth:hover:before {
+    transform: translateY(0);
+}
+
+.fifth:hover .content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.sixth {
+    /* overflow: visible; */
+}
+
+.sixth .content {
+    padding: 1em 0;
+    justify-content: space-evenly;
+}
+
+.sixth::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: skewX(-45deg) scaleX(2) translateX(100%);
+    transition: all 0.5s;
+}
+
+.sixth:hover::before {
+    transform: skewX(-45deg) scaleX(2) translateX(0);
+}
+
+.sixth h2 {
+    color: white;
+    background-color: black;
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+    transform: translate(100%, -200%);
+    transition: all 0.3s 0.3s;
+}
+
+.sixth:hover h2 {
+    transform: translate(0);
+}
+
+.sixth p {
+    color: white;
+    width: 80%;
+    transform: translate(-100%, 250%);
+    transition: all 0.3s 0.3s;
+}
+
+.sixth:hover p {
+    transform: translate(0);
+}
+
+.sixth button {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    transform: translateY(200%);
+    transition: all 0.3s 0.3s;
+}
+
+.sixth:hover button {
+    transform: translate(0);
+}
+
+.seventh {
+    /* overflow: visible; */
+}
+
+.seventh .content {
+    padding: 1em 0;
+    justify-content: space-evenly;
+}
+
+.seventh::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform-origin: bottom right;
+    transform: rotateZ(90deg);
+    transition: all 0.5s;
+}
+
+.seventh:hover::before {
+    transform: rotateZ(0);
+}
+
+.seventh h2 {
+    color: white;
+    background-color: black;
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+    transform: translate(0, -200%);
+    transition: all 0.3s 0.4s;
+}
+
+.seventh:hover h2 {
+    transform: translate(0);
+}
+
+.seventh p {
+    color: white;
+    width: 80%;
+    transform-origin: center;
+    transform: translateX(100%) rotateZ(90deg);
+    transition: all 0.3s 0.3s;
+}
+
+.seventh:hover p {
+    transform: rotateZ(0) translateY(0);
+}
+
+.seventh button {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-800%);
+    transition: all 0.3s 0.3s;
+}
+
+.seventh:hover button {
+    transform: translate(0);
+}
+
+.eighth {
+    border: 0.5em solid white;
+}
+
+.eighth:hover img {
+    transform: scale(0);
+    transition: all 0.3s;
+}
+
+.eighth .content {
+    background-color: teal;
+    padding: 0;
+    color: white;
+    transform: rotateZ(180deg) scale(0);
+    transition: all 0.5s 0.3s;
+}
+
+.eighth:hover .content {
+    transform: rotateZ(0) scale(1);
+}
+
+.eighth .content > * {
+    opacity: 0;
+    transition: all 0.5s 0.6s;
+}
+
+.eighth:hover .content > * {
+    opacity: 1;
+}
+
+.eighth button {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s 0.3s;
+}
+
+.eighth h2 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.eighth p {
+    padding: 0 3em;
+}
+
+.ninth {
+    color: white;
+}
+
+.ninth::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.ninth:hover::before {
+    opacity: 1;
+}
+
+.ninth button {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    border: none;
+    cursor: pointer;
+    transform: translateY(200%);
+    transition: all 0.5s;
+}
+
+.ninth:hover button {
+    transform: translate(0);
+}
+
+.ninth h2 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.ninth p {
+    padding: 0 3em;
+}
+
+.ninth h2,
+.ninth p {
+    transform: scale(10);
+    transition: all 0.5s 0.2s;
+    filter: blur(10px);
+    opacity: 0;
+}
+
+.ninth:hover h2,
+.ninth:hover p {
+    transform: scale(1);
+    filter: blur(0);
+    opacity: 1;
+}
+
+.ninth .content {
+    padding: 0;
 }
