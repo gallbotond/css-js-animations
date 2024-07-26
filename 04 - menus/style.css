@@ -461,12 +461,18 @@ a {
     align-items: center;
 }
 
+#eleventh:hover a {
+    color: rgba(0, 0, 0, 0.15);
+    /* filter: blur(5px); */
+}
+
 #eleventh a {
     font-size: 4em;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.137);
-    padding: .2em .5em;
+    padding: 0.2em 0.5em;
+    background-color: transparent;
     transition: all 0.5s;
+    /* filter: blur(0); */
 }
 
 #eleventh a:hover {
@@ -474,13 +480,17 @@ a {
     background-color: white;
 }
 
-#eleventh span {
+#eleventh span
+/* #eleventh h1  */ {
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.5s;
 }
 
@@ -497,9 +507,98 @@ a {
 }
 
 #eleventh li:nth-child(4):hover span {
-    background-color: lightcyan;
+    background-color: rgb(168, 255, 255);
 }
 
 #eleventh li:nth-child(5):hover span {
     background-color: moccasin;
+}
+
+#eleventh h1 {
+    color: transparent;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 15vw;
+    z-index: -1;
+    letter-spacing: 1em;
+    transition: all 0.4s;
+}
+
+#eleventh a:hover h1 {
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+#twelfth ul {
+    flex-direction: column;
+}
+
+#twelfth a {
+    font-size: 3em;
+    font-weight: bolder;
+    -webkit-text-stroke: 1px black;
+    text-transform: uppercase;
+    color: transparent;
+    bottom: 0px;
+    left: 0px;
+    transition: all 0.5s;
+}
+
+#twelfth a::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-right: 5px solid steelblue;
+    color: steelblue;
+    -webkit-text-stroke: 2px steelblue;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+#twelfth a:hover::after {
+    width: 100%;
+}
+
+#thirteenth ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+#thirteenth a {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+#thirteenth a:hover {
+    color: rgba(0, 0, 0, 0.13);
+}
+
+#thirteenth a::before {
+    content: attr(data-text);
+    position: absolute;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: dodgerblue;
+    font-size: 0.4em;
+    text-shadow: 0 0 5px dodgerblue, 0 0 15px deepskyblue, 0 0 35px deepskyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    letter-spacing: 3em;
+    transition: all 0.5s;
+}
+
+#thirteenth a:hover::before {
+    opacity: 1;
+    letter-spacing: .5em;
 }
